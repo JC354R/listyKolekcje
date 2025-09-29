@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Random;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,10 +22,12 @@ public class Main {
         wypisz(wylosowaneLiczby);
         HashSet<Integer>  zbior = wylosujLiczbyDoZbioru(10);
         wypisz(zbior);
+        System.out.println(wylosowaneLiczby);
     }
 
     //__________________________________________________
     //wylosuj liczby do zbioru
+
     private static HashSet<Integer> wylosujLiczbyDoZbioru(int ileLiczba) {
         Random random = new Random();
         HashSet<Integer> zbiorLiczblosowych = new HashSet<>();
@@ -87,5 +86,14 @@ public class Main {
         for (int elementzbioru : zbior) {
             System.out.print(elementzbioru + " ");
         }
+    }
+    private static ArrayList<Integer> wstawZKlawiatury(int ileLiczb){
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Integer> wstawioneLiczby = new ArrayList<>();
+        for (int i = 0; i < ileLiczb; i++) {
+            System.out.println("Podaj Liczbe");
+            wstawioneLiczby.add(scanner.nextInt());
+        }
+        return wstawioneLiczby;
     }
 }
